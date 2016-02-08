@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * Created by ngraydon on 29/01/2016.
  */
-public class Colours
+public class Colors
 {
-    public static Color brown = new Color(210,105,30);
+    public static final Color brown = new Color(210,105,30);
 }

@@ -8,12 +8,6 @@ import Reference.*;
 
 public class Core extends JFrame
 {
-    // Layout
-    FlowLayout myLayout = new FlowLayout();
-
-    // Loader
-    ClassLoader loader = this.getClass().getClassLoader();
-
     // Panel Creation
     JPanel panel = new JPanel();
 
@@ -27,20 +21,21 @@ public class Core extends JFrame
         add(panel);
 
         setVisible(true);
-        //panel.setLayout(myLayout);
     }
 
     public static void main(String[] args)
     {
+
+
         Core gui = new Core();
         gui.setBackground(Color.black);
         gui.repaint();
+
     }
 
     public void paint(Graphics g)
     {
-        int x,y,x2,y2;
-
+        int x,y;
         super.paint(g);
 
         // Paint Countries
@@ -68,7 +63,7 @@ public class Core extends JFrame
             }
             else if (Constants.CONTINENT_IDS[counter] == 5)
             {
-                g.setColor(Colours.brown);
+                g.setColor(Colors.brown);
             }
             else
             {
@@ -77,15 +72,18 @@ public class Core extends JFrame
             x = Constants.COUNTRY_COORD[counter][0];
             y = Constants.COUNTRY_COORD[counter][1];
 
-            g.drawOval(x,y,30,30);
+            g.fillOval(x,y,35,35);
         }
+
+        g.setColor(Color.white);
 
         //Paint Adjacent
         for(int counter = 0; counter < Constants.NUM_COUNTRIES; counter++)
         {
-            g.setColor(Color.white);
-
-            //g.drawLine(x,y,x2,y2);
+            for(int innerCounter = 0; innerCounter < Constants.ADJACENT[counter].length; innerCounter++)
+            {
+                g.drawLine(Constants.COUNTRY_COORD[counter][0],Constants.COUNTRY_COORD[counter][1],Constants.COUNTRY_COORD[Constants.ADJACENT[counter][innerCounter]][0],Constants.COUNTRY_COORD[Constants.ADJACENT[counter][innerCounter]][1]);
+            }
         }
 
     }

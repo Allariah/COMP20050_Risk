@@ -1,8 +1,5 @@
 package Reference;
 
-/**
- * Created by ngraydon on 29/01/2016.
- */
 public class Constants
 {
     public static final int NUM_PLAYERS = 2;
