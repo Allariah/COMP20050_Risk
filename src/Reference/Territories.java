@@ -34,7 +34,9 @@ public class Territories
         System.out.println("Remaining Territories in pool: " + game.allTerritories + "\n");
 
         System.out.println("Player 1 controls: " + game.player1Territories);
+        System.out.println("Player 1's node array contains: " + game.player1Nodes);
         System.out.println("Player 2 controls: " + game.player2Territories);
+        System.out.println("Player 2's node array contains: " + game.player2Nodes);
 
         System.out.println("Neutral 1 controls: " + game.neutral1Territories);
         System.out.println("Neutral 2 controls: " + game.neutral2Territories);
@@ -58,7 +60,7 @@ public class Territories
         allocate(game.neutral4Territories, game.allTerritories, Constants.INIT_COUNTRIES_NEUTRAL); // Neutral 4
     }
 
-    public static void setupNodes(ArrayList playerTerritories, int[] playerNodes)
+    public static void setupNodes(ArrayList playerTerritories, ArrayList playerNodes)
     {
         int nodes = playerTerritories.size();
         for(int counter = 0; counter < nodes; counter++)
@@ -67,7 +69,7 @@ public class Territories
             {
                 if(playerTerritories.get(counter).equals(Constants.COUNTRY_NAMES[counter2]))
                 {
-                    playerNodes[counter] = counter2;
+                    playerNodes.add(counter2);
                     break;
                 }
             }

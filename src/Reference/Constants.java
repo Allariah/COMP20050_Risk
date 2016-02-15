@@ -10,6 +10,13 @@ public class Constants
     public static final int INIT_COUNTRIES_NEUTRAL = 6;
     public static final int INIT_UNITS_PLAYER = 36;
     public static final int INIT_UNITS_NEUTRAL = 24;
+    public static final int[] COUNTRY_IDS = {
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            9, 10, 11, 12, 13, 14, 15,
+            16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+            28, 29, 30, 31,
+            32, 33, 34, 35,
+            36, 37, 38, 39, 40, 41};
     public static final String[] COUNTRY_NAMES = {
             "Ontario","Quebec","NW Territory","Alberta","Greenland","E United States","W United States","Central America","Alaska",
             "Great Britain","W Europe","S Europe","Ukraine","N Europe","Iceland","Scandinavia",

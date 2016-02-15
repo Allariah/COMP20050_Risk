@@ -18,14 +18,17 @@ public class Game
     public String player1 = null;
     public String player2 = null;
 
+    // Player Colours
+
+
     // All Territories
     public ArrayList allTerritories = new ArrayList();
 
     // Player Territories
     public ArrayList player1Territories = new ArrayList();
     public ArrayList player2Territories = new ArrayList();
-    public int[] player1Nodes = new int[Constants.NUM_COUNTRIES];
-    public int[] player2Nodes = new int[Constants.NUM_COUNTRIES];
+    public ArrayList player1Nodes = new ArrayList();
+    public ArrayList player2Nodes = new ArrayList();
 
     // Neutral Territories
     public ArrayList neutral1Territories = new ArrayList();
@@ -69,5 +72,21 @@ public class Game
     {
         printNames(game);
         Territories.print(game);
+    }
+
+    public static void capture(ArrayList winner, ArrayList loser, ArrayList winnerStrings, ArrayList loserStrings, int node)
+    {
+        int loserSize = loser.size();
+        for(int counter = 0; counter < loserSize; counter++)
+        {
+            if(loser.get(counter).equals(node))
+            {
+                winner.add(node);
+                loser.remove(counter);
+                winnerStrings.add(loserStrings.get(counter));
+                loserStrings.remove(counter);
+                break;
+            }
+        }
     }
 }
